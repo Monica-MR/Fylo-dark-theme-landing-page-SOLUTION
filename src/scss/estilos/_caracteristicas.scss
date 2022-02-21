@@ -1,0 +1,42 @@
+@use 'base/variables' as v; 
+@use 'base/mixins' as m;
+
+.caracteristicas{
+    background-color: v.$primario2;
+    padding-top: 12rem;
+    @include m.tablet {
+        padding-top: 0;
+    }
+    &__grid{
+        width: 85%;
+        margin: 0 auto;
+        @include m.tablet {
+            @include m.grid(2, 10rem);
+            width: 60%;
+        }
+    }
+}
+.box{
+    margin-bottom: 8rem;
+    text-align: center;
+    &:last-of-type{
+        margin-bottom: 0;
+        
+    }
+    @include m.tablet {
+        margin-bottom: 0;
+    }
+
+    &__icon{
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+    &__heading{
+        font-size: 2rem;
+        margin: 0;
+        font-family: v.$fuente_secundaria;
+    }
+    &__descripcion{
+        line-height: 1.5;
+    }
+} 

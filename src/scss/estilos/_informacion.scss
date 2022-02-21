@@ -1,0 +1,55 @@
+@use 'base/variables' as v; 
+@use 'base/mixins' as m;
+
+.bg{
+    background: linear-gradient(to bottom, transparent 45%, v.$primario2 45% 100%), url(../../build/img/bg-curvy-mobile.svg);
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: 0 35%;
+    @include m.tablet {
+        background:  url(../../build/img/bg-curvy-desktop.svg);
+        background-position: -38%  bottom;
+        background-repeat: no-repeat;
+        background-size: 100% 50%; 
+    }
+}
+.informacion{
+    width: 85%;
+    padding-top: v.$separacion;
+    text-align: center;
+    @include m.tablet {
+        padding-top: 0;
+        width: 35%;
+        padding-bottom: 17rem;
+        margin: 0 auto;
+    }
+    &__imagen{
+        color: v.$blanco;
+        height: auto;
+        margin-bottom: v.$separacion;
+        @include m.tablet {
+            margin: 0 auto;
+        }
+    }
+    &__heading{
+        @include m.tablet {
+            margin-top: 2rem;
+            margin-bottom: 0;
+            font-size: 3rem;
+        }
+    }
+    &__descripcion{
+        line-height: 1.5; 
+        font-size: 2.5rem;
+        margin-bottom: v.$separacion;
+        @include m.tablet {
+            font-size: 1.8rem;
+        }
+    }
+    &__boton{
+        @include m.boton(v.$secundario1, v.$secundario2, v.$blanco);
+        @include m.desktop {
+            width: 40%;
+        }
+    }
+}

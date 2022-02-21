@@ -1,0 +1,75 @@
+@use 'base/variables' as v; 
+@use 'base/mixins' as m;
+
+.testimoniales{
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+    background-color: v.$primario2; 
+    &__grid{
+        width: 80%;
+        @include m.tablet {
+            @include m.grid(3, 1rem);
+        }
+    }
+}
+
+.testimonial{
+    background-color: v.$primario4;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 90%;
+    margin-bottom: 2.5rem; 
+    @include m.tablet {
+        margin-bottom: 0;
+    }
+    &:first-child{
+        position: relative;
+    }
+    &__comillas{
+        position: absolute;
+        left: 0;
+        top: -2rem;
+        width: 2.5rem;
+        height: auto;
+        @include m.tablet {
+            width: 5rem;
+            top: -4rem;
+            left: -.5rem;
+        }
+    }
+    &__informacion{
+        font-size: 1rem;
+        line-height: 2;
+        @include m.tablet {
+            font-size: 1.3rem;
+            line-height: 1.7;
+        }
+    }
+    &__autor{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        @include m.tablet {
+            margin-top: 0;
+        }
+    }
+    &__foto{
+        width: 4rem;
+        border-radius: 2rem;
+        height: auto;
+        margin-right: 1rem;
+    }
+    &__nombre{
+        font-family: v.$fuente_principal;
+        font-weight: 700;
+        font-size: 1.2rem;
+        &--small{
+            font-weight: 400;
+            color: v.$blanco;
+            display: block;
+            font-size: 1rem;
+            margin-top: .5rem;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+@use 'base/variables' as v; 
+@use 'base/mixins' as m;
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 1.5rem;
+    @include m.tablet {
+        padding: 6rem 4rem;
+    }
+    &__logo{
+        width: 8rem;
+        @include m.tablet {
+            width: 16rem;
+        }
+    }
+    &__link{
+        padding-left: 2rem;
+        &:first-child{
+            padding-left: 0;
+        }
+    }
+}

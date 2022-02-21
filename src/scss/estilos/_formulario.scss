@@ -1,0 +1,59 @@
+@use 'base/variables' as v; 
+@use 'base/mixins' as m;
+
+.formulario{
+    background: linear-gradient(v.$primario2 0 55%,  v.$primario3 55% 100%);
+    &__contenedor{
+        background-color: v.$primario1; 
+        max-width: 90% ;
+        padding: 3rem;
+        text-align: center;
+        border-radius: 1rem;
+        @include m.tablet { 
+            max-width: 50%; 
+        }
+    }
+    &__heading{
+        font-size: 2rem;
+        font-family: v.$fuente_secundaria;
+        margin-bottom: 0;
+        @include m.tablet {
+            font-size: 2.4rem;
+        }
+    }
+    &__informacion{
+        line-height: 1.7;
+        font-size: 1.4rem;
+        @include m.tablet {
+            padding-top: 1rem;
+            max-width: 85%;
+            margin: 0 auto;
+            
+        }
+    }
+    &__cuerpo{
+        @include m.desktop {
+            display: flex;
+            max-width: 85%;
+            margin: 3rem auto 0 auto;
+            align-items: flex-end;
+        }
+    }
+    &__input{
+        padding: 1.5rem 2.5rem;
+        width: 100%;
+        border-radius: 3rem;
+        border: 0;
+        font-size: 1rem;
+        margin:  2rem 0;
+        @include m.desktop {
+            margin-bottom: 0;
+            margin-right: 3rem;
+        }
+    }
+    &__boton{
+        @include m.boton(v.$secundario1, v.$secundario2, v.$blanco);
+        width: 100%;
+        padding: 1.5rem ;
+    }
+} 

@@ -1,0 +1,93 @@
+@use 'base/variables' as v; 
+@use 'base/mixins' as m;
+
+.footer{
+    background-color: v.$primario3;
+    padding-top: 10rem;
+    @include m.tablet {
+        padding: 5rem 0 10rem 0;
+    }
+    &__grid{
+        width: 80%;
+        @include m.tablet {
+            @include m.grid(9, 4rem);
+            align-items: center;
+        }
+    }
+    &__ubicacion{
+        grid-column: 1/4;
+    }
+    &__location-flex{
+        display: flex;
+        align-items: flex-start;
+        margin-top: 3.5rem;
+    }
+    &__informacion{
+        margin: 0 0 0 2rem;
+        padding: 0;
+        line-height: 1.8;
+        @include m.tablet {
+            font-size: 1rem;
+        }
+        @include m.desktop {
+            font-size: 1.4rem; 
+        }
+    }
+    &__contacto{
+        grid-column: 4/6;
+        margin-top: 2rem;
+        @include m.tablet {
+            margin-top: 6.5rem;
+        }
+    }
+    &__telefono, &__email{
+        display: flex;
+        align-items: center;
+    }
+    &__telefono{
+        margin-bottom: 1.5rem;
+    }
+    &__navegacion{
+        display: flex;
+        flex-direction: column;
+        margin-top: v.$separacion;
+        @include m.tablet {
+            align-self: flex-start;
+            margin-top: 12.5rem;
+        }  
+    }
+    &__link{
+        line-height: 2.5;
+        @include m.tablet {
+            font-size: 1.2rem;
+        }
+        @include m.desktop {
+            font-size: 1.4rem; 
+        }
+    } 
+    &__social{
+        margin-top: v.$separacion*2;
+        padding-bottom: v.$separacion;
+        display: flex;
+        justify-content: center;
+        grid-column: 8/10;
+    }
+    &__redsocial{
+        border: .5px solid v.$blanco;
+        margin-left: 1.5rem;
+        padding: .8rem;
+        border-radius: 50%;
+        &::last-of-type{
+            margin-left: 0;
+        }
+        @include m.tablet {
+            margin: 0;
+            margin-left: .5rem;
+        }
+    }
+    &__icon{
+        width: 2rem;
+        height: 2rem;
+        filter: invert(100%);
+    }   
+} 
